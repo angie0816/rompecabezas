@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#tablero {
+  width: 312px;
+  height: 312px;
+  position: relative;
+  border: 3px solid #000;
+  background-color: #eee;
+}
+
+.ficha {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  cursor: grab;
+  user-select: none;
+  border-radius: 8px;
+  transition: left 0.1s ease, top 0.1s ease; /* suaviza el snap */
+}
+
+.correcto {
+  background-color: #2ecc71 !important;
+}
+
+#mensaje {
+  margin-top: 20px;
+  font-size: 20px;
+  color: green;
+  display: none;
+}

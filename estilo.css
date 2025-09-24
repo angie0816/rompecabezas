@@ -4,35 +4,78 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
+  background-color: #ffe040;
+}
+
+.contenedor {
+  display: flex;
+  gap: 30px; /* espacio entre tablero e imagen */
+  align-items: flex-start;
+  
 }
 
 #tablero {
   width: 312px;
   height: 312px;
-  position: relative;
+  position: absolute;
   border: 3px solid #000;
   background-color: #eee;
+  right: 550px;
+  top: 300px;
+}
+
+#imagenjd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 480px;
+  top: 100px;
+}
+
+#imagenjd img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#dialogo {
+  background: white;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 220px;
+  font-size: 16px;
+  color: #333;
+  position: relative;
+}
+
+/* triangulito estilo "globo" */
+#dialogo::before {
+  content: "";
+  position: absolute;
+  left: -15px; /* sale desde la izquierda, al lado de la imagen */
+  top: 20px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
 }
 
 .ficha {
   width: 100px;
   height: 100px;
-  background-color: #3498db;
-  color: white;
-  font-size: 36px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-size: cover;
+  background-position: center;
   position: absolute;
   cursor: grab;
   user-select: none;
   border-radius: 8px;
-  transition: left 0.1s ease, top 0.1s ease; /* suaviza el snap */
+  transition: left 0.1s ease, top 0.1s ease;
+  border: 1px solid #ccc;
 }
 
 .correcto {
-  background-color: #2ecc71 !important;
+  outline: 3px solid #2ecc71; /* marco verde */
 }
 
 #mensaje {
@@ -40,4 +83,6 @@ body {
   font-size: 20px;
   color: green;
   display: none;
+  position: absolute;
+  top: 700px;
 }
